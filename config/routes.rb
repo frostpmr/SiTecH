@@ -1,6 +1,10 @@
 Website::Application.routes.draw do
+  get "home/contact"
   get "home/about"
   get "home/index"
+resources :inquiries, :only => [:new, :create] do
+  get 'thank_you', :on => :collection
+end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
